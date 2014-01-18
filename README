@@ -1,0 +1,5 @@
+raw2pbrt 
+
+Author : Marwan Abdellah <abdellah.marwan@gmail.com>
+
+This application is used to convert volumes with raw file formats to a basic pbrt scene for adding physically-based rendering effects and improving the realism of the volumes.  
