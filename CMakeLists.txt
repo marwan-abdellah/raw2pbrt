@@ -42,7 +42,11 @@ SET(SRC_LIST raw2pbrt.cpp
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
 #########################################################
-#! Executable
+#! Executable generation
 #########################################################
 ADD_EXECUTABLE(${PROJECT_NAME} ${SRC_LIST})
 
+#########################################################
+#! Installation
+#########################################################
+install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)

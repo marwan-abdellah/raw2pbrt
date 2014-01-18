@@ -14,7 +14,16 @@ using namespace std;
 
 int raw2pbrt(int argc, char** argv)
 {
-    if (argc < 2)
+    if (strcmp(argv[1],"--help") || strcmp(argv[1],"-h"))
+    {
+
+        std::cout << "raw2pbrt converter, by Marwan Abdellah <abdellah.marwan@gmail.com>." << std::endl;
+        std::cout << "Use this command to generate a pbrt scene with an ASCII volume file " << std::endl;
+        std::cout << "\t raw2pbrt <RAW_VOLUME_DIR> <OUTPUT_FILE_NAME>" << std::endl;
+        return 0;
+    }
+
+    if (argc < 3)
     {
         std::cout << "******************************************************************************" << std::endl;
         std::cout << "Please provide a path to the directory that has "
