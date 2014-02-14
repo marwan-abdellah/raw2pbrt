@@ -6,6 +6,7 @@
  ********************************************************************/
 
 #include <iostream>
+#include <string>
 #include "MACROS.h"
 #include "Volume.h"
 #include "pbrtWriter.h"
@@ -14,12 +15,17 @@ using namespace std;
 
 int raw2pbrt(int argc, char** argv)
 {
-    if (strcmp(argv[1],"--help") || strcmp(argv[1],"-h"))
+	std::string argvString = argv[1];
+    if (argvString == "--help" || argvString == "-h")
     {
-
+		std::cout << "******************************************************************************" << std::endl;
         std::cout << "raw2pbrt converter, by Marwan Abdellah <abdellah.marwan@gmail.com>." << std::endl;
         std::cout << "Use this command to generate a pbrt scene with an ASCII volume file " << std::endl;
         std::cout << "\t raw2pbrt <RAW_VOLUME_DIR> <OUTPUT_FILE_NAME>" << std::endl;
+        std::cout << "******************************************************************************" << std::endl;
+        
+        INFO("Exitting");
+        
         return 0;
     }
 
@@ -30,7 +36,7 @@ int raw2pbrt(int argc, char** argv)
                      "the header and the raw files." << std::endl;
         std::cout << "The directory name should be the same as the header "
                      "and the raw files" << std::endl;
-        std::cout << "For example ./raw2pbrt ~/Volume OutputFileName" << std::endl;
+        std::cout << "For example ./raw2pbrt ~/Volume/Volume OutputFileName" << std::endl;
         std::cout << "******************************************************************************" << std::endl;
 
         INFO("Exitting");
@@ -40,7 +46,7 @@ int raw2pbrt(int argc, char** argv)
 
     // Volume prefix
     char* volumePrefix = argv[1];
-    std::cout << volumePrefix;
+    std::cout << volumePrefix << std::endl;
 
     // Array containing the volume data
     char* volumeData;

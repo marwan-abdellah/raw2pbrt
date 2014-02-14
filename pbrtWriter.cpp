@@ -33,8 +33,8 @@ void pbrtWriter::WriteSceneFile(char* fileName)
     fileStream << "###########################################################" << std::endl;
 
     fileStream << "# For further detais, look at gluLookAt() " << std::endl;
-    fileStream << "# pX pY pZ eyeX eyeY eyeZ normX normY normZ " << std::endl;
-    fileStream << "LookAt 0.0 0.0 0.0  0.0 -5.0 0.0  0.0 1.0 0.0 " << std::endl;
+    fileStream << "# eyeX eyeY eyeZ pX pY pZ  normX normY normZ " << std::endl;
+    fileStream << "LookAt 5.0 0.0 0.0  0.0 0.0 0.0  0.0 1.0 0.0 " << std::endl;
 
     fileStream << "# Camera " << std::endl;
     fileStream << "Camera \"perspective\" " << std::endl;
