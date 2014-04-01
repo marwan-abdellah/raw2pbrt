@@ -15,6 +15,19 @@ using namespace std;
 
 int raw2pbrt(int argc, char** argv)
 {
+    if (argc < 2)
+    {
+        std::cout << "******************************************************************************" << std::endl;
+        std::cout << "raw2pbrt converter, by Marwan Abdellah <abdellah.marwan@gmail.com>." << std::endl;
+        std::cout << "Use this command to generate a pbrt scene with an ASCII volume file " << std::endl;
+        std::cout << "\t raw2pbrt <RAW_VOLUME_DIR> <OUTPUT_FILE_NAME>" << std::endl;
+        std::cout << "******************************************************************************" << std::endl;
+
+        INFO("Exitting");
+
+        return 0;
+    }
+
 	std::string argvString = argv[1];
     if (argvString == "--help" || argvString == "-h")
     {
