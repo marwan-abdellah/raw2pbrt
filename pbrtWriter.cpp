@@ -53,14 +53,14 @@ void pbrtWriter::WriteSceneFile(char* fileName)
 
     fileStream << "# Volume integrator " << std::endl;
     fileStream << "VolumeIntegrator \"single\" " << std::endl;
-    fileStream << "\t float stepsize\" [.0025] " << std::endl;
+    fileStream << "\t \"float stepsize\" [.0025] " << std::endl;
 
     fileStream << "# Scene " << std::endl;
     fileStream << "WorldBegin " << std::endl;
 
     fileStream << "# Light "<< std::endl;
     fileStream << "LightSource \"point\" " << std::endl;
-    fileStream << "\t point from\" [0 10 2] " << std::endl;
+    fileStream << "\t \"point from\" [0 10 2] " << std::endl;
     fileStream << "\t \"color I\" [100 100 100] " << std::endl;
 
     fileStream << "# Volume ASCII file " << std::endl;
