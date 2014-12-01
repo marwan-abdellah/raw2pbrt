@@ -42,32 +42,32 @@ void pbrtWriter::WriteSceneFile(char* fileName)
 
     fileStream << "# Film " << std::endl;
     fileStream << "Film \"image\" " << std::endl;
-    fileStream << "\t \"integer xresolution\" [1920] " << std::endl;
-    fileStream << "\t \"integer yresolution\" [1080] " << std::endl;
+    fileStream << "\t \"integer xresolution\" [1000] " << std::endl;
+    fileStream << "\t \"integer yresolution\" [1000] " << std::endl;
     fileStream << "\t \"string filename\" \"file.exr\" " << std::endl;
 
     fileStream << "# Sampler "<< std::endl;
     fileStream << "Sampler \"bestcandidate\" " << std::endl;
-    fileStream << "\t \"integer pixelsamples\" [15] " << std::endl;
+    fileStream << "\t \"integer pixelsamples\" [16] " << std::endl;
     fileStream << "\t PixelFilter \"triangle\" " << std::endl;
 
     fileStream << "# Volume integrator " << std::endl;
     fileStream << "VolumeIntegrator \"single\" " << std::endl;
-    fileStream << "\t \"float stepsize\" [.0025] " << std::endl;
+    fileStream << "\t \"float stepsize\" [.025] " << std::endl;
 
     fileStream << "# Scene " << std::endl;
     fileStream << "WorldBegin " << std::endl;
 
     fileStream << "# Light "<< std::endl;
     fileStream << "LightSource \"point\" " << std::endl;
-    fileStream << "\t \"point from\" [0 10 2] " << std::endl;
+    fileStream << "\t \"point from\" [0 50 0] " << std::endl;
     fileStream << "\t \"color I\" [100 100 100] " << std::endl;
 
     fileStream << "# Volume ASCII file " << std::endl;
     fileStream << "Include \"" << pbrtVolumeFile << "\"" << std::endl;
-    fileStream << "\t \"color sigma_a\" [0 0 0] " << std::endl;
-    fileStream << "\t \"color sigma_s\" [0 0 0] " << std::endl;
-    fileStream << "\t \"color Le\" [4.5 250 4.5] " << std::endl;
+    fileStream << "\t \"color sigma_a\" [0.05 0.05 0.05] " << std::endl;
+    fileStream << "\t \"color sigma_s\" [0.1 0.1 0.1] " << std::endl;
+    fileStream << "\t \"color Le\" [0 0 0] " << std::endl;
 
     fileStream << "WorldEnd"<< std::endl;
 
